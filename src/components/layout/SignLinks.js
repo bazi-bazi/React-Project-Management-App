@@ -1,19 +1,22 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./styles/signoutlinks.css";
 
 const SignLinks = () => {
   return (
-    <ul className="links">
-      <li className="links__list">
-        <NavLink to="/" className="links__list">
+    <ul className="nav justify-content-end">
+      <li className="nav-item">
+        <NavLink to="/" className="nav-link">
           New Project
         </NavLink>
-        <NavLink to="/" className="links__list">
+      </li>
+      <li className="nav-item">
+        <NavLink to="/" className="nav-link">
           Log Out
         </NavLink>
-        <NavLink to="/" className="links__list-icon">
-          NN
+      </li>
+      <li className="nav-item">
+        <NavLink to="/" className="nav-link">
+          <span class="badge bg-info">New</span>
         </NavLink>
       </li>
     </ul>
