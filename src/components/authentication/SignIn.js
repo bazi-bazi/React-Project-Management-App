@@ -20,8 +20,9 @@ class SignIn extends Component {
 
   render() {
     return (
-      <div className="container pt-5">
-        <form onSubmit={this.handleSubmit}>
+      <div className="container pt-5  p-3 my-3 border">
+        <h2 className="pt-2">Sign in</h2>
+        <form onSubmit={this.handleSubmit} className="pt-4 pb-5">
           <div className="row mb-3">
             <label htmlFor="email" className="col-sm-2 col-form-label">
               Email

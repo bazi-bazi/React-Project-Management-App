@@ -5,17 +5,17 @@ const ProjectDetails = (props) => {
 
   return (
     <div className="container pt-5">
-      <div className="card w-75">
+      <div className="card mb-3 bg-light.bg-gradient text-dark shadow p-4 mb-4 bg-white border border-light rounded-lg ">
         <div className="card-body">
-          <h5 className="card-title">Project TiTle - {id}</h5>
+          <h3 className="card-title">Project TiTle - {id}</h3>
           <p className="card-text">
             With supporting text below as a natural lead-in to additional
             content.
           </p>
-          <p className="card-text">
-            <small className="text-muted">Posted By Nik -</small>
-            <small className="text-muted">3 rd September</small>
-          </p>
+          <div class="border-success pt-3">
+            <span className="font-weight-bold">Posted By Nik </span>
+            <small className="text-muted font-italic">3 rd September</small>
+          </div>
         </div>
       </div>
     </div>

@@ -5,7 +5,7 @@ import SignOutLinks from "./SignOutLinks";
 
 const Navigation = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
       <div className="container-fluid container-lg">
         <Link to="/" className="navbar-brand">
           Project Management App
