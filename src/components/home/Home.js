@@ -2,15 +2,15 @@ import React from "react";
 import Notifications from "./Notifications";
 import ProjectList from "../projects/ProjectList";
 
-const Main = () => {
+const Home = () => {
   return (
     <div>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 col-md-8">
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-12 col-md-8">
             <ProjectList />{" "}
           </div>
-          <div class="col-sm-12 col-md-4">
+          <div className="col-sm-12 col-md-4">
             <Notifications />
           </div>
         </div>
@@ -19,4 +19,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Home;

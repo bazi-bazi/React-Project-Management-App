@@ -16,7 +16,7 @@ const SignLinks = () => {
       </li>
       <li className="nav-item">
         <NavLink to="/" className="nav-link">
-          <span class="badge bg-info">New</span>
+          <span className="badge bg-info">New</span>
         </NavLink>
       </li>
     </ul>
