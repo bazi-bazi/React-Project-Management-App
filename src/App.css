@@ -1,7 +1,7 @@
 /* default styles */
 html {
   box-sizing: border-box;
-  height: 100vh;
+  min-height: 100%;
 }
 
 *,
@@ -24,6 +24,13 @@ body {
   font-size: 16px;
   color: #1a1a1a;
   background: #f2f3f7;
+  min-height: 100%;
+}
+
+form {
+  padding: 20px;
+  margin-top: 60px;
+
 }
 
 /* colors text: 1A1A1A background: F2F3F7 darkblue: 192965 LightBlue: 0060CA  sky: 91CEFF yellow: FCDC74*/

@@ -5,12 +5,12 @@ const SignOutLinks = () => {
   return (
     <ul className="navbar-nav justify-content-end">
       <li className="nav-item">
-        <NavLink to="/" className="nav-link">
+        <NavLink to="/signup" className="nav-link">
           Signup
         </NavLink>
       </li>
       <li className="nav-item">
-        <NavLink to="/" className="nav-link">
+        <NavLink to="/signin" className="nav-link">
           Login
         </NavLink>
       </li>

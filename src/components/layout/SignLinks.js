@@ -5,7 +5,7 @@ const SignLinks = () => {
   return (
     <ul className="navbar-nav justify-content-end">
       <li className="nav-item">
-        <NavLink to="/" className="nav-link">
+        <NavLink to="/create" className="nav-link">
           New Project
         </NavLink>
       </li>
