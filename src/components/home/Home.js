@@ -1,12 +1,17 @@
-import React from "react";
-import Notifications from "./Notifications";
-import ProjectList from "../projects/ProjectList";
-import { useSelector } from "react-redux";
+import React, { Component } from 'react'
+import ProjectList from '../projects/ProjectList'
+import Notifications from './Notifications'
+import { connect } from 'react-redux'
+import {compose} from 'redux'
+import { firestoreConnect } from 'react-redux-firebase';
 
-const Home = () => {
-  const projects = useSelector((state) => state.project.projects);
-
-  return (
+class Home extends Component {
+  render() {
+    
+    // console.log(this.props);
+    const { projects } = this.props;
+    
+    return (
     <div>
       <div className="container">
         <div className="row">
@@ -19,7 +24,20 @@ const Home = () => {
         </div>
       </div>
     </div>
-  );
+   )
+  }
+}
+
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+    projects: state.firestore.ordered.projects || state.project.projects
+  };
 };
 
-export default Home;
+export default compose(
+  connect(mapStateToProps),
+  firestoreConnect([
+    { collection: 'projects' }
+  ])
+)(Home)

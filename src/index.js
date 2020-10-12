@@ -10,14 +10,15 @@ import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import firebase from './configuration/firebaseConf'
 
+
 import { createFirestoreInstance, reduxFirestore, getFirestore } from 'redux-firestore'
 import { ReactReduxFirebaseProvider, getFirebase } from 'react-redux-firebase'
 import 'firebase/firestore';
 
 
 const rrfConfig = { 
-  userProfile: 'projects',
-  useFirestoreForProfile: true
+  userProfile: 'users',
+ 
 }
 
 const store = createStore(rootReducer, 
@@ -26,6 +27,7 @@ const store = createStore(rootReducer,
       reduxFirestore(firebase)
   )
   );
+
 
 const rffProps = {
   firebase,
