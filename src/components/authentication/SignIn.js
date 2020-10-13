@@ -1,5 +1,7 @@
 import React from "react";
 import { Component } from "react";
+import { connect } from "react-redux";
+import { signIn } from '../../redux/actions/authActions'
 
 class SignIn extends Component {
   state = {
@@ -15,10 +17,11 @@ class SignIn extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
+    this.props.signIn(this.state);
   };
 
   render() {
+    const {authError} = this.props;
     return (
       <div className="container pt-5  p-3 my-3 border">
         <h2 className="pt-2">Sign in</h2>
@@ -52,10 +55,25 @@ class SignIn extends Component {
           <button type="submit" className="btn btn-primary">
             Sign in
           </button>
+          <div>
+    {authError ? <p className="alert alert-danger mt-3" role="alert">{authError}</p> : null }
+</div>
         </form>
       </div>
     );
   }
 }
 
-export default SignIn;
+const mapStateToProps = (state) => {
+  return{
+    authError: state.auth.authError
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signIn: (credentials) => dispatch(signIn(credentials))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
