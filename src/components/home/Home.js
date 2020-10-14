@@ -4,13 +4,12 @@ import Notifications from './Notifications'
 import { connect } from 'react-redux'
 import {compose} from 'redux'
 import { firestoreConnect } from 'react-redux-firebase';
+import { Redirect } from "react-router-dom";
 
 class Home extends Component {
   render() {
-    
-    // console.log(this.props);
-    const { projects } = this.props;
-    
+    const { projects, auth } = this.props;
+    if (!auth.uid) return <Redirect to="/signin" />
     return (
     <div>
       <div className="container">
@@ -31,7 +30,8 @@ class Home extends Component {
 const mapStateToProps = (state) => {
   console.log(state);
   return {
-    projects: state.firestore.ordered.projects || state.project.projects
+    projects: state.firestore.ordered.projects || state.project.projects,
+    auth: state.firebase.auth
   };
 };
 

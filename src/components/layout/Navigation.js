@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 
 const Navigation = (props) => {
   const {auth} = props;
-  console.log(auth);
+  const links = auth.uid ? <SignLinks /> : <SignOutLinks />;
   return (
     <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
       <div className="container-fluid container-lg">
@@ -14,13 +14,15 @@ const Navigation = (props) => {
           Project Management App
         </Link>
         <div className="collapse navbar-collapse justify-content-end">
-          <SignLinks />
-          <SignOutLinks />
+        {auth.isLoaded && 
+               links
+          }
         </div>
       </div>
     </nav>
   );
 };
+
 
 const mapDispatchToProps =(state)=> {
 
@@ -29,4 +31,4 @@ const mapDispatchToProps =(state)=> {
   }
 }
 
-export default connect()(Navigation);
+export default connect(mapDispatchToProps)(Navigation);
