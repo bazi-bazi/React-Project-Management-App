@@ -18,7 +18,7 @@ const SignLinks = (props) => {
       </li>
       <li className="nav-item">
         <NavLink to="/" className="nav-link">
-          <span className="badge bg-info">New</span>
+          <span className="badge bg-info"> {props.profile.initial} </span>
         </NavLink>
       </li>
     </ul>
