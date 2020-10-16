@@ -8,7 +8,8 @@ import { Redirect } from "react-router-dom";
 
 class Home extends Component {
   render() {
-    const { projects, auth } = this.props;
+    const { projects, auth, users } = this.props;
+    console.log(users);
     if (!auth.uid) return <Redirect to="/signin" />
     return (
     <div>
@@ -18,7 +19,7 @@ class Home extends Component {
             <ProjectList projects={projects} />
           </div>
           <div className="col-sm-12 col-md-4">
-            <Notifications />
+            <Notifications project={projects} />
           </div>
         </div>
       </div>
@@ -38,6 +39,6 @@ const mapStateToProps = (state) => {
 export default compose(
   connect(mapStateToProps),
   firestoreConnect([
-    { collection: 'projects' }
+    { collection: 'projects', orderBy: ["createdAt", "desc"] }
   ])
 )(Home)
