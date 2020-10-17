@@ -4,6 +4,7 @@ import SignLinks from "./SignLinks";
 import SignOutLinks from "./SignOutLinks";
 import { connect } from "react-redux";
 
+
 const Navigation = (props) => {
   const {auth, profile} = props;
   const links = auth.uid ? <SignLinks profile={profile} /> : <SignOutLinks />;

@@ -1,0 +1,11 @@
+.paddingli {
+    padding-bottom: 10px;
+    font-size: 1rem;
+    border-bottom: 1px solid #dee2e6;
+    text-transform: capitalize;
+}
+
+.numberText {
+    font-size: 2rem;
+    font-weight: 700;
+}

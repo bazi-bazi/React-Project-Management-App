@@ -5,14 +5,20 @@ import { connect } from 'react-redux'
 import {compose} from 'redux'
 import { firestoreConnect } from 'react-redux-firebase';
 import { Redirect } from "react-router-dom";
+import "../../app.css";
+import "../../animation.css";
+import "../../bootstrap-datepicker.css";
+import "../../bootstrap.min.css";
+import "../../aos.css";
+import "../../owl.theme.default.min.css";
 
 class Home extends Component {
   render() {
     const { projects, auth, users } = this.props;
-    console.log(users);
     if (!auth.uid) return <Redirect to="/signin" />
     return (
     <div>
+      <section className="ftco-section bg-light">
       <div className="container">
         <div className="row">
           <div className="col-sm-12 col-md-8">
@@ -23,13 +29,13 @@ class Home extends Component {
           </div>
         </div>
       </div>
+      </section>
     </div>
    )
   }
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     projects: state.firestore.ordered.projects || state.project.projects,
     auth: state.firebase.auth
