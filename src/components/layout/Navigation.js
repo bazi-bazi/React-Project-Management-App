@@ -26,7 +26,6 @@ const Navigation = (props) => {
 
 
 const mapDispatchToProps =(state)=> {
-  console.log(state)
 
   return {
     auth: state.firebase.auth,

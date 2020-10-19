@@ -6,6 +6,7 @@ import "../../bootstrap-datepicker.css";
 import "../../bootstrap.min.css";
 import "../../aos.css";
 import "../../owl.theme.default.min.css";
+import "../../custome.css";
 
 
 
@@ -23,11 +24,11 @@ const ProjectSum = ({ project }) => {
 		              <div className="one-third mb-4 mb-md-0">
 		                <div className="job-post-item-header align-items-center">
 		                	<span className="subadge">Title</span>
-		                  <h2 className="mr-3 text-black "> {project.title} </h2>
+		                  <h2 className="mr-3 text-black textColor "> {project.title} </h2>
 		                </div>
-		                <div className="job-post-item-body d-block d-md-flex">
-		                  <div className="mr-3"><span className="icon-layers"></span>Posted by : {project.authorFirstName} {project.authorLastName}</div><br />
-		                  <div><span className="icon-my_location"></span> <span>{project.createdAt && moment(project.createdAt.toDate()).calendar()} </span></div>
+		                <div className="job-post-item-body d-block">
+		                  <div className="mr-3"><span className="icon-layers"></span>Posted by : {project.authorFirstName} {project.authorLastName}</div>
+		                  <small className="text-muted">{project.createdAt && moment(project.createdAt.toDate()).calendar()} </small>
 		                </div>
 		              </div>
 

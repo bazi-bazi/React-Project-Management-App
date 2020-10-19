@@ -31,9 +31,9 @@ const ProjectDetails = (props) => {
                          <p className="card-text">
                           {project.content}
                          </p>
-		                <div className="job-post-item-body d-block d-md-flex">
-		                  <div className="mr-3"><span className="icon-layers"></span>Posted by : {project.authorFirstName} {project.authorLastName}</div><br />
-		                  <div><span className="icon-my_location"></span> <span>{project.createdAt && moment(project.createdAt.toDate()).calendar()} </span></div>
+		                <div className="job-post-item-body d-block">
+		                  <div className="mr-3"><span className="icon-layers"></span>Posted by : {project.authorFirstName} {project.authorLastName}</div>
+		                  <small className="text-muted"> {project.createdAt && moment(project.createdAt.toDate()).calendar()}</small>
 		                </div>
 		              </div>
 
